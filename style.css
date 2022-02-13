@@ -286,7 +286,7 @@ nav ul li a{
     padding: 0px;
     border-radius: 12px;
     width: 50%;
-    height:75%;
+    height:90%;
 
   }
 
@@ -395,6 +395,7 @@ nav ul li a{
   /* --------------------------------------------- INFOS DÉTAILLÉES DE LA MODALE --------------------------------------------- */
 
 
+ 
   .infomusic{
 
     display: inline-flex;
@@ -423,7 +424,7 @@ nav ul li a{
 
   .infomusic .column1 .notedate{
     display: flex;
-    margin-bottom: 31px;
+    margin-bottom: 20px;
   }
 
   .infomusic .column1 .titre{
@@ -441,14 +442,45 @@ nav ul li a{
   .infomusic .column1 .notedate .note{
     display: flex;
     color:rgb(187, 187, 187);
-    
- 
+    font-size: 0.9em;
   }
 
-  .infomusic .column1 .notedate .note .note-api{
+
+
+  .infomusic .column1 .notepays{
+    display: flex;
+    margin-bottom: 20px;
+  }
+
+  .infomusic .pays{
+    display: flex;
+    color:rgb(187, 187, 187);
+  }
+
+  .infomusic .column1 .notepays .note{
+    display: flex;
+    margin-left: 27px;
+    color:rgb(187, 187, 187);
+
+  }
+
+  .infomusic .column1 .notepays .note .imdb-api{
+    margin-left:22px;
+    color: white;
+  }
+  
+
+  .infomusic .column1 .pays .pays-api{
+    margin-left: 22px;
+    font-weight: bold;
+    color: white;
+  }
+
+  .infomusic .column1 .notedate .note-api{
     margin-left: 22px;
     font-weight: bold;
     color:white;
+    font-size: 0.9em;
   }
   
 
@@ -456,6 +488,8 @@ nav ul li a{
     margin-left: 22px;
     font-weight: bold;
     color:white;
+    font-size: 0.9em;
+
   }
 
   .infomusic .column1 .notedate .date{
@@ -534,7 +568,7 @@ nav ul li a{
     padding: 0px;
     border-radius: 12px;
     width: 75%;
-    height:75%;
+    height:90%;
 
   }
 
