@@ -1,3 +1,6 @@
+
+
+
 /* LES FILMS LES MIEUX NOTÉS */
 
 
@@ -8,13 +11,20 @@ fetch(requete)
 .then(data => {
 console.log(data.results);
 
+
 // var i
 
-for(let movie of data.results){
 
-   let slider = document.getElementById(sliderId);
-   slider.innerHTML+=`<img class="item" src="${movie.image_url}" data-id="${movie.id}">` 
+let slider = document.getElementById(sliderId);
+var index = slider.children.length;
+
+for(let movie of data.results){ 
+   slider.innerHTML+=`<img class="item" src="${movie.image_url}" data-id="${movie.id}" alt="film just stream it" data-index="${index}">` 
+   index++
+
 }
+
+refreshSlider(slider);
 
 $(".item").on("click",function(){
  var name = this.dataset.id;
@@ -22,13 +32,17 @@ $(".item").on("click",function(){
  let url = prefixe + name;
  console.log(url);
 
+
  fetch(url)
       .then(res => res.json())
       .then(data =>{
 
-       $("#note-api").text(data.imdb_score); // innerHTML =
+       document.getElementById("note-api").innerHTML= data.rated;
+       //$("#note-api").text(data.rated); // innerHTML =
        $("#time").text(data.duration + " min");
        $("#date-api").text(data.date_published);
+       $("#imdb-api").text(data.imdb_score);
+       $("#pays-api").text(data.countries);
        $("#titre-api").text(data.title);
        $("#description-api").text(data.description);
        $("#realisateur-api").text("Réalisateur : " + data.directors);
@@ -92,18 +106,36 @@ const fleshD = document.getElementsByClassName("fleshdroite");
 
 //When the user click on flesh, slider scroll in left or rigth
 
+for(let gauche of fleshG){
+  gauche.addEventListener("click",function(e){
+  var parent = gauche.parentElement;
+  for(let item of parent.children){
+    item.dataset.index= parseint(item.dataset.index) -1
+    
+    while(item.dataset.index>1){
 
-fleshG.on("click", function(e){
-  let div = document.getElementById('slidertest');
-  let target = e.target;
-  div.scrollLeft += 20;
-  
-});
+    }
+  }
+  })}
 
-fleshD.on("click", function(e){
+function refreshSlider(slider){
 
-  let div = document.getElementById('slidertest');
-  let target = e.target;
-  div.scrollLeft -= 20;
- 
-});
+  console.log(slider);
+  console.log(slider.children);
+
+
+  for(let item of slider.children){
+
+    console.log(item.dataset);
+    if(item.dataset.index<4){
+      item.style.display="block";  
+    }
+    else{ item.style.display="none";
+    }
+  }
+
+}  
+
+
+
+
