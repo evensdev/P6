@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="FR">
 
     <head>
         <title>Stream On it</title>
@@ -10,11 +10,11 @@
     <body>
         
 
-        <!------MENU------->
+        <!-- MENU -->
 
         <header>
 
-            <div class="logo"><img src="images/just_stream_it_2.png"></div>
+            <div class="logo"><img src="images/just_stream_it_2.png" alt="logo just stream it"></div>
 
             <nav>
                 <ul>
@@ -30,7 +30,7 @@
         
         <div class="description">
             <div class="titrefilm"> 
-                <img src="images/titre.png">
+                <img src="images/titre.png" alt="tete affiche">
             </div>
             Dans cette comédie d'action de super-héros, un expert de la 
             police sort du coma avec des facultés surhumaines et part 
@@ -50,63 +50,63 @@
 
 
 
-        <!------ COUVERTURE ------->
+        <!-- COUVERTURE -->
 
 
         <h3>Les films les mieux notés</h3>
         
         <div class="carousel">
-            <div class="fleshgauche" id = "flesh"><img src="img/fleshleft.png"></div>
+            <div class="fleshgauche" id = "fleshOne"><img src="img/fleshleft.png" alt="fleche gauche"></div>
                 <div class="slider" id ="slidertest">                 
                     
                     </div>
-         <div class="fleshdroite" id = "flesh"><img src="img/fleshdroite.png"></div>
+         <div class="fleshdroite" id = "fleshTwo"><img src="img/fleshdroite.png" alt="fleche droite"></div>
       </div>
 
 
         
 
 
-      <!------ SLIDER  ACTION ------->
+      <!-- SLIDER  ACTION -->
 
       <h3>Les films d'action</h3>
         
         <div class="carousel">
-            <div class="fleshgauche" ><img src="img/fleshleft.png" id="directionLR"></div>
+            <div class="fleshgauche" ><img src="img/fleshleft.png" id="directionLR" alt="fleche gauche"></div>
                 <div class="slider" id ="slideraction">  
                     
                     
                 </div>
-         <div class="fleshdroite"><img src="img/fleshdroite.png"></div>
+         <div class="fleshdroite"><img src="img/fleshdroite.png" alt="fleche droite"></div>
       </div>
 
       
-      <!------ SLIDER ANIMATION ------->
+      <!-- SLIDER ANIMATION -->
 
 
       <h3>Les films d'animation</h3>
         
         <div class="carousel">
-            <div class="fleshgauche"><img src="img/fleshleft.png"></div>
+            <div class="fleshgauche"><img src="img/fleshleft.png" alt="fleche gauche"></div>
                 <div class="slider" id ="sliderdanimation">  
                     
 
                 </div>
-         <div class="fleshdroite"><img src="img/fleshdroite.png"></div>
+         <div class="fleshdroite"><img src="img/fleshdroite.png" alt="fleche droite"></div>
       </div>
 
      
-     <!------ SLIDER BIBLIOGRAPHIE -------> 
+     <!--SLIDER BIBLIOGRAPHIE --> 
 
 
       <h3>Les biographies</h3>
         
         <div class="carousel">
-            <div class="fleshgauche"><img src="img/fleshleft.png"></div>
+            <div class="fleshgauche"><img src="img/fleshleft.png" alt="fleche gauche"></div>
                 <div class="slider" id ="sliderbiography">  
 
                 </div>
-         <div class="fleshdroite"><img src="img/fleshdroite.png"></div>
+         <div class="fleshdroite"><img src="img/fleshdroite.png" alt="fleche droite"></div>
        </div>
 
 
@@ -120,14 +120,14 @@
         <div class="modal-content">
 
             <!-- Boutton de fermeture -->
-            <div class="close"><img class="img"src="img/close.png"></div>
+            <div class="close"><img class="img" src="img/close.png" alt="bouton fermer"></div>
 
                 <!-- Image de fond du film -->
                 <div class="imgfilm" id="imgPop">
 
                    <div class="title-film">
 
-                        <img class="img"src="images/just_stream_it_2.png" id="cov">
+                        <img class="img" src="images/just_stream_it_2.png" id="cov" alt="image couverture">
                     
                         <!-- barre de temps progressive--> 
                 
@@ -167,10 +167,15 @@
 
                     <!-- Note et Dates du film -->
                     <div class="notedate">
-                        <div class="note">Note du film<div class="note-api" id="note-api"> 3 sur 5</div></div>
-                        <div class="date"> Date de sortie <div class="date" id="date-api"> 12/06/2017 </div></div>
+                        <div class="note">Note<div class="note-api" id="note-api"> 3 sur 5</div></div>
+                        <div class="date">Sortie <div class="date" id="date-api"> 12/06/2017 </div></div>
                     </div>
 
+                    <!-- note IMBD et Pays -->
+                    <div class="notepays">
+                        <div class="pays">Pays <div class="pays-api" id="pays-api"> Allemagne </div></div>
+                        <div class="note">Note ImdB <div class="imdb-api" id="imdb-api"> 6.0 </div></div>
+                    </div>
                     <!-- Titre du film -->
                     <div class="titre">Titre : <div class="titre-api" id="titre-api"></div></div>
 
@@ -204,7 +209,7 @@
         </div>  
                      
         </div>    
-    </div> 
+
     
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="script.js"></script>    
