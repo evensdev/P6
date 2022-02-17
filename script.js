@@ -1,3 +1,46 @@
+/* GESTION DES FLECHES DU CAROUSEL */
+
+let currentScrollPosition = 0;
+let scrollAmount = 320;
+
+const sCont = document.querySelector(".storys-container");
+const hScroll = document.querySelector(".horizontal-scroll");
+  
+const btnScrollLeft = document.querySelector("#btn-scroll-left")
+const btnScrollRight = document.querySelector("#btn-scroll-right")
+
+btnScrollLeft.style.opacity = "0";
+
+
+
+/*let maxScroll = -sCont.offsetWidth + hScroll.offsetWidth;*/
+
+
+function scrollHorizontally(val){
+  
+  currentScrollPosition +=(val * scrollAmount);
+  
+  if(currentScrollPosition >= 0){
+    currentScrollPosition = 0;
+    btnScrollLeft.style.opacity = "0";   
+  }else{
+    btnScrollLeft.style.opacity = "1";
+  }
+
+  if(currentScrollPosition <= -620){
+    btnScrollRight.style.display = "none";   
+  }else{
+    btnScrollRight.style.opacity = "1";
+    btnScrollRight.style.display = "flex"; 
+  }
+
+
+  sCont.style.left = currentScrollPosition + "px";
+}
+
+
+
+
 /* LES FILMS LES MIEUX NOTÉS */
 
 
@@ -8,13 +51,20 @@ fetch(requete)
 .then(data => {
 console.log(data.results);
 
+
 // var i
 
-for(let movie of data.results){
 
-   let slider = document.getElementById(sliderId);
-   slider.innerHTML+=`<img class="item" src="${movie.image_url}" data-id="${movie.id}">` 
+let slider = document.getElementById(sliderId);
+var index = slider.children.length;
+
+for(let movie of data.results){ 
+   slider.innerHTML+=`<img class="item" src="${movie.image_url}" data-id="${movie.id}" alt="film just stream it" data-index="${index}">` 
+   index++
+
 }
+
+refreshSlider(slider);
 
 $(".item").on("click",function(){
  var name = this.dataset.id;
@@ -22,13 +72,17 @@ $(".item").on("click",function(){
  let url = prefixe + name;
  console.log(url);
 
+
  fetch(url)
       .then(res => res.json())
       .then(data =>{
 
-       $("#note-api").text(data.imdb_score); // innerHTML =
+       document.getElementById("note-api").innerHTML= data.rated;
+       //$("#note-api").text(data.rated); // innerHTML =
        $("#time").text(data.duration + " min");
        $("#date-api").text(data.date_published);
+       $("#imdb-api").text(data.imdb_score);
+       $("#pays-api").text(data.countries);
        $("#titre-api").text(data.title);
        $("#description-api").text(data.description);
        $("#realisateur-api").text("Réalisateur : " + data.directors);
@@ -84,26 +138,25 @@ myFetch('http://localhost:8000/api/v1/titles/?genre=Biography&page=3', "sliderbi
 
 
 
-// Récupérer les classes des flèches
 
-const fleshG = document.getElementsByClassName("fleshgauche");
-const fleshD = document.getElementsByClassName("fleshdroite");
+function refreshSlider(slider){
 
-
-//When the user click on flesh, slider scroll in left or rigth
+  console.log(slider);
+  console.log(slider.children);
 
 
-fleshG.on("click", function(e){
-  let div = document.getElementById('slidertest');
-  let target = e.target;
-  div.scrollLeft += 20;
-  
-});
+  for(let item of slider.children){
 
-fleshD.on("click", function(e){
+    console.log(item.dataset);
+    if(item.dataset.index<7){
+      item.style.display="block";  
+    }
+    else{ item.style.display="none";
+    }
+  }
 
-  let div = document.getElementById('slidertest');
-  let target = e.target;
-  div.scrollLeft -= 20;
- 
-});
+}  
+
+
+
+
