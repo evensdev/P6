@@ -7,7 +7,7 @@
 body{
 
 	background-image: linear-gradient(to bottom, rgba(245, 246, 252, 0), rgba(24, 24, 24, 15)98.49%), 
-	url(img/film.jpeg);   
+	url(images/film.jpeg);   
 	background-size: cover;
 	background-repeat: no-repeat;
 	height: 120vh;
@@ -197,7 +197,63 @@ nav ul li a{
 
 .carousel{
 	display:flex;
+  align-items: center;
+  justify-content: center;
+  padding:10px;
+  width: 98%;
+
 }
+
+
+
+
+/* CONFIG SLIDER DEROULANT */
+
+.horizontal-scroll{
+  width: 780px;
+  height: 300px;
+  border-radius: 5px;
+  display:flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  position:relative;
+  overflow:hidden;
+}
+
+
+.horizontal-scroll .btn-scroll{
+
+  
+  background-color: #fff ;
+  color: #999;
+  box-shadow: 0 0 10px #999;
+  padding: 5px 8px;
+  border: 0;
+  border-radius: 50%;
+  margin: 0 5px;
+  z-index: 1;
+  cursor:pointer;
+  transition: 1s;
+
+
+}
+
+
+
+
+.storys-container{
+  display:flex;
+  flex-direction:row;
+  justify-content: flex-start;
+  align-items: center;
+  position:absolute;
+  left:0;
+  transition: 0.5s all ease-out;
+}
+
+
+
 
 .slider{
 	
@@ -207,8 +263,6 @@ nav ul li a{
 	justify-content: start;
 	overflow:auto;
 }
-
-.slider::-webkit-scrollbar { width: 0 !important }
 
 
 
@@ -286,7 +340,7 @@ nav ul li a{
     padding: 0px;
     border-radius: 12px;
     width: 50%;
-    height:75%;
+    height:90%;
 
   }
 
@@ -310,7 +364,7 @@ nav ul li a{
     border-top-right-radius: 12px;
     width: 100%;
     height: 60%;
-    background-image: linear-gradient(to bottom, rgba(245, 246, 252, 0), rgba(24, 24, 24, 15)95.49%), url(img/preview.webp);   
+    background-image: linear-gradient(to bottom, rgba(245, 246, 252, 0), rgba(24, 24, 24, 15)95.49%), url(images/preview.webp);   
     background-repeat: no-repeat;
     background-size: cover;
     margin-bottom: 7%;
@@ -395,6 +449,7 @@ nav ul li a{
   /* --------------------------------------------- INFOS DÉTAILLÉES DE LA MODALE --------------------------------------------- */
 
 
+ 
   .infomusic{
 
     display: inline-flex;
@@ -423,7 +478,7 @@ nav ul li a{
 
   .infomusic .column1 .notedate{
     display: flex;
-    margin-bottom: 31px;
+    margin-bottom: 20px;
   }
 
   .infomusic .column1 .titre{
@@ -441,14 +496,45 @@ nav ul li a{
   .infomusic .column1 .notedate .note{
     display: flex;
     color:rgb(187, 187, 187);
-    
- 
+    font-size: 0.9em;
   }
 
-  .infomusic .column1 .notedate .note .note-api{
+
+
+  .infomusic .column1 .notepays{
+    display: flex;
+    margin-bottom: 20px;
+  }
+
+  .infomusic .pays{
+    display: flex;
+    color:rgb(187, 187, 187);
+  }
+
+  .infomusic .column1 .notepays .note{
+    display: flex;
+    margin-left: 27px;
+    color:rgb(187, 187, 187);
+
+  }
+
+  .infomusic .column1 .notepays .note .imdb-api{
+    margin-left:22px;
+    color: white;
+  }
+  
+
+  .infomusic .column1 .pays .pays-api{
+    margin-left: 22px;
+    font-weight: bold;
+    color: white;
+  }
+
+  .infomusic .column1 .notedate .note-api{
     margin-left: 22px;
     font-weight: bold;
     color:white;
+    font-size: 0.9em;
   }
   
 
@@ -456,6 +542,8 @@ nav ul li a{
     margin-left: 22px;
     font-weight: bold;
     color:white;
+    font-size: 0.9em;
+
   }
 
   .infomusic .column1 .notedate .date{
@@ -534,7 +622,7 @@ nav ul li a{
     padding: 0px;
     border-radius: 12px;
     width: 75%;
-    height:75%;
+    height:90%;
 
   }
 
