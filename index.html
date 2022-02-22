@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="FR">
+
+    <head>
+        <title>Stream On it</title>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="style.css">  
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    </head>
+
+    <body>
+        
+
+        <!-- MENU -->
+
+        <header>
+
+            <div class="logo"><img src="images/just_stream_it_2.png" alt="logo just stream it"></div>
+
+            <nav>
+                <ul>
+                    <li><a href="#">Accueil</a></li>
+                    <li><a href="#">Categorie</a></li>
+                    <li class="menudroite"><a href="#">DIRECT</a></li>
+                    <li class="menudroite"><a href="#">Jeunesse</a></li>
+                </ul>
+                
+            </nav>
+        </header>
+
+        
+        <div class="description">
+            <div class="titrefilm"> 
+                <img src="images/titre.png" alt="tete affiche">
+            </div>
+            Dans cette comédie d'action de super-héros, un expert de la 
+            police sort du coma avec des facultés surhumaines et part 
+            en guerre contre tous ceux qui menacent sa ville.            
+        </div>
+
+        <div class="boutons">
+            <button class="play" id="myBtn" type="button">
+                Regarder
+            </button>   
+
+            <button class="info" type="button">
+                Informations
+            </button>                             
+        </div>
+
+
+
+
+        <!-- SLIDER BEST NOTE -->
+
+
+        <h3>Les films les mieux notés</h3>
+
+        <div class="carousel">
+
+            <div class="horizontal-scroll" horizontal-id="1">
+
+             <button class="btn-scroll-left"  type="button"><i class ="fas fa-chevron-left"></i></button>
+             <button class="btn-scroll-right" type="button"><i class ="fas fa-chevron-right"></i></button>
+              <div class="storys-container">
+                 <div class="slider" id ="slidertest"></div>
+              </div>
+
+            </div>    
+ 
+        </div>
+
+
+
+        <!-- SLIDER  ACTION -->
+
+        <h3>Les films d'action</h3>
+
+        <div class="carousel">
+
+            <div class="horizontal-scroll" horizontal-id="2">
+
+             <button  class="btn-scroll-left"   type="button"><i class ="fas fa-chevron-left"></i></button>
+             <button  class="btn-scroll-right"  type="button"><i class ="fas fa-chevron-right"></i></button>
+              <div class="storys-container">
+                 <div class="slider" id ="slideraction"></div>
+              </div>
+
+            </div>    
+ 
+        </div>
+
+        
+
+        <!-- SLIDER ANIMATION -->
+
+        <h3>Les films d'animation</h3>
+
+        <div class="carousel">
+
+            <div class="horizontal-scroll" horizontal-id="3">
+
+             <button   class="btn-scroll-left"  type="button"><i class ="fas fa-chevron-left"></i></button>
+             <button   class="btn-scroll-right" type="button"><i class ="fas fa-chevron-right"></i></button>
+              <div class="storys-container">
+                 <div class="slider" id ="sliderdanimation"></div>
+              </div>
+
+            </div>    
+ 
+        </div>
+
+
+
+        <!--SLIDER BIOGRAPHIE --> 
+        
+        <h3>Les biographies</h3>
+
+        <div class="carousel">
+
+            <div class="horizontal-scroll" horizontal-id="4">
+
+             <button  class="btn-scroll-left"  type="button"><i class ="fas fa-chevron-left"></i></button>
+             <button  class="btn-scroll-right" type="button"><i class ="fas fa-chevron-right"></i></button>
+              <div class="storys-container">
+                 <div class="slider" id ="sliderbiography"></div>
+              </div>
+
+            </div>    
+ 
+        </div>
+        
+        
+        <div class="footer">
+            <div class="info-footer">
+
+                <ul>
+                    <li><a href="#">Autodescription</a></li>
+                    <li><a href="#">Relation investisseurs</a></li>
+                    <li><a href="#">Informations légales</a></li>
+                    <li><a href="#"><img class="boutton_store" src="images/google_play.png" alt="google play"></a>
+                        <a href="#"><img class="boutton_store" src="images/apple_store.png" alt="google play"> </a> 
+                    </li>
+                    
+                </ul>
+
+
+                <ul>
+                    <li><a href="#">Centre d'aide</a></li>
+                    <li><a href="#">Recrutement</a></li>
+                    <li><a href="#">Préférences cookies</a></li>
+                    <li class="copyright"><a href="#">© Stream On It</a></li>
+
+                    
+                    
+                </ul>
+
+
+                <ul>
+                    <li><a href="#">Carte cadeaux</a></li>
+                    <li><a href="#">Conditions d'utilisation</a></li>
+                    <li><a href="#">Mentions légales</a></li>
+                          
+                </ul>   
+                
+                <ul>
+                    <li><a href="#">Presse</a></li>
+                    <li><a href="#">Confidentialité</a></li>
+                    <li><a href="#">Nous contacter</a></li>
+                    
+                </ul> 
+
+            </div>
+
+    
+        </div>
+
+        
+    
+
+
+      <!-- La modal -->
+      <div id="myModal" class="modal">
+
+        <!-- Contenu de la modal -->
+        <div class="modal-content">
+
+            <!-- Boutton de fermeture -->
+            <div class="close"><img class="img" src="images/close.png" alt="bouton fermer"></div>
+
+                <!-- Image de fond du film -->
+                <div class="imgfilm" id="imgPop">
+
+                   <div class="title-film">
+
+                        <img class="img" src="images/just_stream_it_2.png" id="cov" alt="image couverture">
+                    
+                        <!-- barre de temps progressive--> 
+                
+                        <div class="barprogressive">
+                                
+                            <svg class="svg">
+                                <svg width="442" height="5" viewBox="0 0 442 5" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <g id="pogressbar">
+                                    <path id="remplissage" d="M77.5 0H1.5C0.671573 0 0 1.07452 0 2.4C0 3.72548 0.671573 4.8 1.5 4.8H77.5C78.3284 4.8 79 3.72548 79 2.4C79 1.07452 78.3284 0 77.5 0Z" fill="#D90E0E"/>
+                                    <path id="barre" d="M440.5 0H1.5C0.671573 0 0 1.07452 0 2.4C0 3.72548 0.671573 4.8 1.5 4.8H440.5C441.328 4.8 442 3.72548 442 2.4C442 1.07452 441.328 0 440.5 0Z" fill="#B9B9B9" fill-opacity="0.34"/>
+                                    </g>
+                                </svg>
+                                                                                                
+                            </svg>
+                        
+                            <!-- timing déjà regardé--> 
+
+                            <div class="temps" id="time">3 sur 44 min</div>                                           
+                        </div>
+
+                        <!-- boutton play --> 
+
+                        <div class="good">
+                            <button class="play" type="button">
+                                Regarder
+                            </button>
+                        </div>
+                    </div>                            
+                </div>           
+        
+            
+            <!-- Infos sur le film  -->
+            <div class="infomusic">
+
+                <!-- Colonne Gauche  -->
+                <div class="column1">
+
+                    <!-- Note et Dates du film -->
+                    <div class="notedate">
+                        <div class="note">Note<div class="note-api" id="note-api"> 3 sur 5</div></div>
+                        <div class="date">Sortie <div class="date" id="date-api"> 12/06/2017 </div></div>
+                    </div>
+
+                    <!-- note IMBD et Pays -->
+                    <div class="notepays">
+                        <div class="pays">Pays <div class="pays-api" id="pays-api"> Allemagne </div></div>
+                        <div class="note">Note ImdB <div class="imdb-api" id="imdb-api"> 6.0 </div></div>
+                    </div>
+                    <!-- Titre du film -->
+                    <div class="titre">Titre : <div class="titre-api" id="titre-api"></div></div>
+
+                    <!-- Description du film -->
+                    <div class="description-api" id="description-api">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+                        Nullam aliquam nunc tellus, in dictum massa accumsan vitae.                        
+                    </div>
+                </div>
+
+                <!-- Colonne Droite  -->
+                <div class="column2">
+                    
+                    <!-- Infos détaillées  -->
+                    <div class="realisateur-api" id="realisateur-api">
+                        <strong>Réalisateur :</strong> Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    </div>
+                    <div class="genre-api" id="genre-api">
+                        <strong>Genre :</strong> Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    </div>
+                    <div class="resultat-api" id="resultat-api">
+                        <strong>Résultats Box Office :</strong> Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    </div>
+                    <div class="acteurs-api" id="acteurs-api">
+                        <strong>Liste d'acteurs :</strong> Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    </div>
+
+                    
+                </div>
+            </div>     
+        </div>  
+                     
+        </div>    
+
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="script.js"></script>    
+    </body>
+
+</html>
